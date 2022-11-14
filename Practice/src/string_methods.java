@@ -3,7 +3,8 @@ import java.util.Scanner;
 class StringOperations {
 
 	Scanner sc = new Scanner(System.in);
-
+	
+	
 	void _compareTo(String str)
 	{
 		System.out.println("enter another string to compare : ");
@@ -129,6 +130,104 @@ class StringOperations {
 
 	}
 
+	
+	void _startswith(String str)
+	{
+		System.out.println("Enter a alphabet to check if it starts with it : ");
+		String str1 = sc.next();
+		
+		if(str.startsWith(str1))
+		{
+			System.out.println("True");
+		}
+		else
+		{
+			System.out.println("False");
+		}
+	}
+	
+	
+	void _tolowercase(String str)
+	{
+		System.out.println(str.toLowerCase());
+	}
+	
+	
+	void _touppercase(String str)
+	{
+		System.out.println(str.toUpperCase());
+	}
+	
+	
+	void _trim(String str)
+	{
+		System.out.println(str.trim());
+	}
+	
+	
+	void _emptymethod(String str)
+	{
+		String emptystr = " ";
+		String notemptystring = "this is a non empty string";
+		System.out.println("The String is empty : "+emptystr.isEmpty());
+		System.out.println("The string is empty : "+notemptystring.isEmpty());
+	}
+	
+	
+	void _replace(String str)
+	{
+		System.out.println("Enter what do you want to replace : ");
+		char what = sc.next().charAt(0);
+		
+		System.out.println("enter with what do you want it to be replaced : ");
+		char with = sc.next().charAt(0);
+		
+		System.out.println(str.replace(what, with));
+	}
+	
+	
+	void _length(String str)
+	{
+		System.out.println("The length of the entered string is : "+str.length());
+	}
+	
+	
+	void _join(String str)
+	{
+		System.out.println("Enter what do you want to join with :,-,+,=,etc.. : ");
+		String ch = sc.next();
+		
+		System.out.println("enter another string : ");
+		String str1 = sc.next();
+		System.out.println("enter one more string : ");
+		String str2 = sc.next();
+		
+		String str3 = String.join(ch,str, str1,str2);
+		
+		System.out.println(str3);
+	}
+	
+	
+	void _lastindex(String str)
+	{
+		System.out.println("Enter to check where will the character appear for the last time : ");
+		String str1 = sc.next();
+		
+		System.out.println(str.lastIndexOf(str1));
+	}
+	
+	
+	void _split(String str)
+	{
+		String[] str1 = str.split("\\s",3);
+		
+		System.out.println("previous string : " + str);
+		System.out.println("new string : ");
+		for(String x : str1)
+		{
+			System.out.print(x);	
+		}
+	}
 }
 
 
@@ -145,7 +244,7 @@ public class string_methods {
 		{
 			System.out.println("what operation do you want to do : ");
 			System.out.println(
-					"1 : Concat two strings\n"
+							  "1 : Concat two strings\n"
 							+ "2 : Check if the given character is in entered string\n"
 							+ "3 : Determine if given character sequence is present in the string\n"
 							+ "4 : Check the suffix of the string\n"
@@ -153,7 +252,16 @@ public class string_methods {
 							+ "6 : Check two strings are identical **uppercase or lowercase will be ignored\n"
 							+ "7 : Get specific part of the string\n"
 							+ "8 : Get index of a specific character\n"
-							+ "9 : Compare two Strings");
+							+ "9 : Compare two Strings\n"
+							+"10 : To check if entered string starts with entered prefix\n"
+							+"11 : Convert entered string in lowercase\n"
+							+"12 : Convert entered string in uppercase\n"
+							+"13 : Remove the Spaces at the starting and ending of string\n"
+							+"14 : Replace a specific alphabet with another which is present in entered string\n"
+							+"15 : Find the length of the entered string\n"
+							+"16 : Join Strings with a letter or symbol\n"
+							+"17 : To find where is a specific word going to occur for thelost time in the entered string\n"
+							+"18 : Split the entered string");
 
 			int option = sc.nextInt();
 
@@ -199,6 +307,47 @@ public class string_methods {
 				method._compareTo(str);
 				break;
 
+			case 10:
+				method._startswith(str);
+				break;
+				
+			case 11:
+				method._tolowercase(str);
+				break;
+				
+			case 12:
+				method._touppercase(str);
+				break;
+				
+			case 13:
+				method._trim(str);
+				break;
+				
+			case 14:
+				method._replace(str);
+				break;
+				
+			case 15:
+				method._length(str);;
+				break;
+				
+			case 16:
+				method._join(str);
+				break;
+				
+			case 17:
+				method._lastindex(str);
+				break;
+			
+			case 18:
+				System.out.println("Enter string with words and spaces (minumum three words) : ");
+				str = sc.nextLine();
+				
+				method._split(str);
+				
+				break;
+				
+				
 			default:
 				System.out.println("you have entered invalid option");
 				break;
