@@ -49,6 +49,7 @@ class StringOperations {
 	}
 
 
+	
 	void _contains(String str) 
 	{
 		System.out.println("enter the char sequence to be found");
