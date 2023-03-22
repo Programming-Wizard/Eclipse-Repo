@@ -10,6 +10,7 @@ import java.awt.event.WindowEvent;
 
 public class Calulator_Using_Awt extends Frame{
 
+	private static final long serialVersionUID = 1L;
 	Button div = new Button(" / ");
 	Button mult = new Button(" X ");
 	Button sub = new Button(" - ");
